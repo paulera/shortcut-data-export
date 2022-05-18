@@ -1,0 +1,4 @@
+#!/bin/bash
+
+"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" http://localhost:8080 & >/dev/null
+php -S localhost:8080
