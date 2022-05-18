@@ -1,11 +1,12 @@
 <?php
 
-require "config.php";
+require_once "config.php";
+
+use app\Config;
+
 
 function getPaginatedRequest($url)
 {
-
-    global $config;
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -14,7 +15,7 @@ function getPaginatedRequest($url)
     curl_setopt($ch, CURLOPT_HTTPHEADER,
         array (
             'Content-Type: application/json',
-            'Shortcut-Token: ' . $config['apikey']
+            'Shortcut-Token: ' . Config::apikey
         )
     );
 
@@ -28,7 +29,7 @@ function getPaginatedRequest($url)
         $output = json_decode($result, true);
 
         if ($output['next']) {
-            $nextUrl = $config['host'] . $output['next'];
+            $nextUrl = Config::host . $output['next'];
             $nextOutput = getPaginatedRequest($nextUrl);
 
             // incorporates the results of the next page into the current one
@@ -52,8 +53,6 @@ function getPaginatedRequest($url)
 function getRequest($url)
 {
 
-    global $config;
-
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -61,7 +60,7 @@ function getRequest($url)
     curl_setopt($ch, CURLOPT_HTTPHEADER,
         array (
             'Content-Type: application/json',
-            'Shortcut-Token: ' . $config['apikey']
+            'Shortcut-Token: ' . Config::apikey
         )
     );
     $result = curl_exec($ch);
@@ -88,8 +87,6 @@ function getRequest($url)
 function postRequest($url, $data)
 {
 
-    global $config;
-
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -98,7 +95,7 @@ function postRequest($url, $data)
     curl_setopt($ch, CURLOPT_HTTPHEADER,
         array (
             'Content-Type: application/json',
-            'Shortcut-Token: ' . $config['apikey']
+            'Shortcut-Token: ' . Config::apikey
         )
     );
 
@@ -119,21 +116,17 @@ function postRequest($url, $data)
 }
 
 function getStoryHistory($storyId) {
-    global $config;
-    $url = $config['host'].$config['endpoint'].'/stories/'.(int)$storyId.'/history';
+    $url = Config::host . Config::endpoint . '/stories/'.(int)$storyId.'/history';
     $output = getRequest ($url);
     return $output;
 }
 
 function printStoriesDetailedHistory($iterationId) {
 
-    global $config;
-    global $workflowStateMap;
-
     $data = array(
         'iteration_id' => $iterationId
     );
-    $url = $config['host'].$config['endpoint'].'/stories/search';
+    $url = Config::host . Config::endpoint . '/stories/search';
     $output = postRequest($url, $data);
 
     $storyDataMap = array(
@@ -182,8 +175,8 @@ function printStoriesDetailedHistory($iterationId) {
                 foreach ($action['changes'] as $changeType => $change) {
                     if ($changeType == 'workflow_state_id') {
                         $stateChangeData = array();
-                        $stateChangeData['state_previous'] = $workflowStateMap[$change['old']] ?? $change['old'];
-                        $stateChangeData['state_new'] = $workflowStateMap[$change['new']] ?? $change['new'];
+                        $stateChangeData['state_previous'] = Config::workflowStateMap[$change['old']] ?? $change['old'];
+                        $stateChangeData['state_new'] = Config::workflowStateMap[$change['new']] ?? $change['new'];
                         $stateChangeData['state_change'] = substr($historyEntry['changed_at'], 0, 10);
                         $rowData = array_merge($mainRowData, $stateChangeData);
 
@@ -198,13 +191,10 @@ function printStoriesDetailedHistory($iterationId) {
 
 function printStoriesBasicInfo($iterationId) {
 
-    global $config;
-    global $workflowStateMap;
-
     $data = array(
         'iteration_id' => $iterationId
     );
-    $url = $config['host'].$config['endpoint'].'/stories/search';
+    $url = Config::host . Config::endpoint . '/stories/search';
     $output = postRequest($url, $data);
 
     $storyDataMap = array(
@@ -237,7 +227,7 @@ function printStoriesBasicInfo($iterationId) {
             }
             $mainRowData[] = $value;
         }
-        $mainRowData[] = $workflowStateMap[$data['workflow_state_id']] ?? $data['workflow_state_id'];
+        $mainRowData[] = Config::workflowStateMap[$data['workflow_state_id']] ?? $data['workflow_state_id'];
 
         print("\n".implode("\t", array_values($mainRowData)));
 
@@ -246,12 +236,11 @@ function printStoriesBasicInfo($iterationId) {
 
 function searchStoriesByQuery($query)
 {
-    global $config;
     $data = array(
         'page_size' => 25,
         'query' => $query
     );
-    $url = $config['host'].$config['endpoint'].'/search/stories'.'?'.http_build_query($data);
+    $url = Config::host . Config::endpoint . '/search/stories'.'?'.http_build_query($data);
 
     $output = getPaginatedRequest ($url);
 
