@@ -11,6 +11,8 @@
 /**
  * Constants that setup the application.
  */
+
+/* Uncomment me
 class Config
 {
     const apikey = '---> YOUR API KEY HERE <---';
@@ -31,3 +33,4 @@ class Config
     );
 
 }
+*/
