@@ -25,13 +25,11 @@ class Request
      *
      * Adds POST data to a cUrl handler
      *
-     * @param $curlHandler resource The handler to modify
-     * @param $postData Array Associative array containing the data to post
-     * @return Request The instance itself
+     * @param $postData array Associative array containing the data to post
+     * @return void
      */
-    private function setPostData(array $postData) {
+    private function setPostData(array $postData) : void {
         curl_setopt($this->curlHandler, CURLOPT_POSTFIELDS, json_encode($postData));
-        return $this;
     }
 
     private function execRequest() {

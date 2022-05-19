@@ -2,9 +2,9 @@
 
 TESTFOLDER=$(readlink -m $(dirname $0))"/"
 TMPFILE=$(mktemp /tmp/basic-info-iteration-176981.XXXXXX)
-EXPECTEDFILE="basic_info_iteration_176981.txt"
+EXPECTEDFILE="detailed_history_iteration_149839.txt"
 
-curl "http://localhost:8080/api.php?action=basicinfo&iterationid=176981" -o $TMPFILE
+curl "http://localhost:8080/api.php?action=detailedhistory&iterationid=149839" -o $TMPFILE
 
 echo "\n--------------------\n"
 

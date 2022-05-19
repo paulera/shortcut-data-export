@@ -1,0 +1,35 @@
+id	epic_id	story_type	estimate	name	deadline	started	started_at	completed	completed_at	blocker	blocked	state_previous	state_new	state_change
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	ToDo	In Development	2021-12-14
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	ToDo	2021-12-20
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	ToDo	In Development	2021-12-20
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	Ready for Review	2021-12-24
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for Review	Ready for QA	2022-01-07
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for QA	In QA	2022-01-10
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In QA	ToDo	2022-01-10
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	ToDo	In Development	2022-01-11
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	Ready for Review	2022-01-11
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for Review	Ready for QA	2022-01-12
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for QA	In QA	2022-01-12
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In QA	ToDo	2022-01-12
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	ToDo	In Development	2022-01-13
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	Ready for Review	2022-01-13
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for Review	Ready for QA	2022-01-13
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for QA	In QA	2022-01-13
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In QA	ToDo	2022-01-14
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	ToDo	In Development	2022-01-17
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	Ready for QA	2022-01-18
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for QA	In Development	2022-01-18
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In Development	Ready for QA	2022-01-18
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Ready for QA	In QA	2022-01-18
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	In QA	Pending Approval	2022-01-19
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Pending Approval	Waiting for Deploy	2022-01-19
+146533		chore	8	Correct deposits implementation for Credorax		1	2022-01-17	1	2022-01-19	0	0	Waiting for Deploy	Completed	2022-01-19
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	ToDo	In Development	2021-10-28
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	In Development	ToDo	2021-11-24
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	ToDo	In Development	2021-12-20
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	In Development	Ready for Review	2022-01-10
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	Ready for Review	Ready for QA	2022-01-10
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	Ready for QA	In QA	2022-01-11
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	In QA	Pending Approval	2022-01-11
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	Pending Approval	Waiting for Deploy	2022-01-11
+126319	131823	chore	2	Trustly New Checkout - Mr Vegas		1	2021-12-20	1	2022-01-11	0	0	Waiting for Deploy	Completed	2022-01-11

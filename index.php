@@ -8,7 +8,7 @@ epic:153141
 </pre>
 
     <!-- <p>Query: <input type="text" id="query" value='epic:153141'></p> -->
-    <p>Iteration ID: <input type="text" id="iterationid" value='176981'></p>
+    <p>Iteration ID: <input type="text" id="iterationid" value='149839'></p>
     <p><button onclick="getbasicinfo();">basic info</button></p>
     <p><button onclick="getdetailedhistory();">detailed history</button></p>
     <p><span id="status"/></p>
@@ -36,7 +36,7 @@ epic:153141
                 iterationid: document.getElementById("iterationid").value
             }
 
-            fetch("getdata.php?" + new URLSearchParams(variables))
+            fetch("api.php?" + new URLSearchParams(variables))
             .then(data => data.text())
             .then(
                 function(contents) {
@@ -57,7 +57,7 @@ epic:153141
                 iterationid: document.getElementById("iterationid").value
             }
 
-            fetch("getdata.php?" + new URLSearchParams(variables))
+            fetch("api.php?" + new URLSearchParams(variables))
                 .then(data => data.text())
                 .then(
                     function(contents) {
