@@ -2,28 +2,22 @@
 
 require_once "boot.php";
 
-use app\Lib;
 use app\lib\Presenter;
 use app\lib\MatrixBuilder;
 use app\lib\ShortcutAdapter;
 
-// @todo: refactor me - break into parts and place in Presenter and MatrixBuilder - build Matrix first, then compile table
-
 switch ($_GET['action']){
+
     case 'detailedhistory':
         $iterationId = $_GET['iterationid'];
         $stories = ShortcutAdapter::getStoriesByIteration($iterationId);
-
-        $storiesHistory = array();
+        $stateChangesPerStory = array();
         foreach ($stories as $story) {
             $storyId = $story['id'];
-            if (array_key_exists($storyId, $storiesHistory)) {
-                throw new \Exception("Duplicated story history entry");
-            }
-            $storiesHistory[$storyId] = ShortcutAdapter::getStoryHistory($storyId);
+            $storyHistory = ShortcutAdapter::getStoryHistory($storyId);
+            $stateChangesPerStory[$storyId] = ShortcutAdapter::filterStoryHistoryStateChangesOnly($storyHistory);
         }
-
-        $matrix = MatrixBuilder::buildStoriesDetailedHistory($stories, $storiesHistory);
+        $matrix = MatrixBuilder::buildStoriesDetailedHistory($stories, $stateChangesPerStory);
         $tsvTable = Presenter::generateTsvTable($matrix);
         print ($tsvTable);
         break;
@@ -35,7 +29,6 @@ switch ($_GET['action']){
         $tsvTable = Presenter::generateTsvTable($matrix);
         print ($tsvTable);
         break;
+
 }
-
-
 

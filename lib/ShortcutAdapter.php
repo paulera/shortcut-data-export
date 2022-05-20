@@ -25,4 +25,28 @@ class ShortcutAdapter
         $request = new Request($url);
         return $request->get();
     }
+
+    public static function filterStoryHistoryStateChangesOnly($storyHistory) : array
+    {
+        $storyHistorySelectedEvents = array();
+
+        foreach ($storyHistory as $event) {
+
+            $filteredActions = array_filter($event['actions'], function($action) {
+                return
+                    $action['action'] == 'update' &&
+                    array_key_exists('changes', $action) &&
+                    array_key_exists('workflow_state_id', $action['changes']);
+            });
+
+            if (count($filteredActions)) {
+                $event['actions'] = $filteredActions;
+                $storyHistorySelectedEvents[] = $event;
+            }
+
+        }
+
+        return $storyHistorySelectedEvents;
+
+    }
 }

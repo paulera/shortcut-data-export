@@ -96,14 +96,7 @@ class MatrixBuilder
                 foreach ($storyHistoryEvents as $event) {
 
                     $actions = $event['actions'];
-                    $filteredActions = array_filter($actions, function($action) {
-                        return
-                            $action['action'] == 'update' &&
-                            array_key_exists('changes', $action) &&
-                            array_key_exists('workflow_state_id', $action['changes']);
-                    });
-
-                    foreach ($filteredActions as $action) {
+                    foreach ($actions as $action) {
 
                         $oldState = $action['changes']['workflow_state_id']['old'];
                         $newState = $action['changes']['workflow_state_id']['new'];
