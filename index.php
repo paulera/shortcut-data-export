@@ -2,13 +2,6 @@
 
     <body>
 
-<pre>Example queries:
-team:"F1 Team"
-epic:153141
-</pre>
-
-    <!-- <p>Query: <input type="text" id="query" value='epic:153141'></p> -->
-    <!-- <p>Iteration ID: <input type="text" id="iterationid" value='149839'></p> -->
     <p>Iteration ID: <input type="text" id="iterationid" value='181221'></p>
 
     <p><button onclick="getbasicinfo();">basic info</button></p>
@@ -21,59 +14,8 @@ epic:153141
 
     </body>
 
-    <script>
-
-        function setStatus(text) {
-            document.getElementById("status").innerHTML = text;
-        }
-
-        function getbasicinfo() {
-
-            setStatus ("Loading data...");
-            display("");
-
-            const variables = {
-                //query: document.getElementById("query").value
-                action: 'basicinfo',
-                iterationid: document.getElementById("iterationid").value
-            }
-
-            fetch("api.php?" + new URLSearchParams(variables))
-            .then(data => data.text())
-            .then(
-                function(contents) {
-                    display(contents);
-                    setStatus ("Success!");
-                }
-            )
-        }
-
-        function getdetailedhistory() {
-
-            setStatus ("Loading data...");
-            display("");
-
-            const variables = {
-                //query: document.getElementById("query").value
-                action: 'detailedhistory',
-                iterationid: document.getElementById("iterationid").value
-            }
-
-            fetch("api.php?" + new URLSearchParams(variables))
-                .then(data => data.text())
-                .then(
-                    function(contents) {
-                        display(contents);
-                        setStatus ("Success!");
-                    }
-                )
-        }
-
-        function display(contents) {
-            document.getElementById("export-contents").innerHTML = contents;
-        }
-
-    </script>
+    <script src="js/apihandler.js"></script>
+    <script src="js/main.js"></script>
 
 
 </html>

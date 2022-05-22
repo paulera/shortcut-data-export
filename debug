@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PHP_DEBUG_CMD="php \
+    -dxdebug.mode=debug \
+    -dxdebug.client_host=127.0.0.1 \
+    -dxdebug.client_port=9003 \
+    -dxdebug.start_with_request=yes \
+    -dxdebug.log=/tmp/xdebug.log"
+
+"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" http://localhost:8080 & >/dev/null
+$PHP_DEBUG_CMD -S localhost:8080
