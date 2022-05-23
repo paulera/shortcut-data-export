@@ -1,15 +1,15 @@
-id	epic_id	story_type	estimate	name	deadline	started	started_at	completed	completed_at	blocker	blocked	current_state
-171244	135516	chore	2	Update the query for Sports Pre Match Menu to be faster	2022-05-16	1	2022-04-01	1	2022-05-17	0	0	Completed
-172633	175262	bug	2	Sportsbook Bets not Settled - Part1: Prepare Script to find the unsettled tickets and events	2022-05-16	1	2022-05-09	1	2022-05-17	0	0	Completed
-179952	175264	feature	1	Sportsbook Front End release Week 22.12 (Re-do build)	2022-05-15	1	2022-05-12	1	2022-05-16	0	0	Completed
-85470	175260	feature	2	UX - In drop down menu always display most balance total by default		1	2022-03-17	1	2022-05-13	0	0	Completed
-175270	175264	feature	1	Sportsbook Front End release Week 22.12	2022-05-11	1	2022-05-10	1	2022-05-12	0	0	Completed
-139889	135516	chore	5	Investigate why the recovery process on stage3 keeps getting triggered in continuation		1	2022-05-04	1	2022-05-09	0	0	Completed
-177902	135516	chore	2	Investigate Timeline Recovery Process and Suspended markets logic		1	2022-05-04	1	2022-05-09	0	0	Completed
-170983	175260	feature	2	Investigate: Process for updating text on Sportsbook Site when text is updated in Betradar Translations		1	2022-04-20	1	2022-05-05	0	0	Completed
-108898	175260	feature	2	Winner betting market should be the 1st betting market to be displayed		1	2022-03-30	1	2022-05-04	0	0	Completed
-82479	175263	feature	2	Country flags and Icons replace Country names in Live Menu		1	2022-03-25	1	2022-05-04	0	0	Completed
-98630	135516	chore	3	Upgrade the Vue version up to 2.6.x		1	2022-03-02	1	2022-05-04	0	0	Completed
-103279	175260	bug	2	Duplicate popups should not be shown when player logs in the 2nd browser		1	2022-03-04	1	2022-05-04	0	0	Completed
-80082	175260	feature	3	Outcome order  - Correct Score		1	2022-02-23	1	2022-05-04	0	0	Completed
-168154	175264	feature	1	Sportsbook Front End release Week 22.11	2022-05-03	1	2022-04-20	1	2022-05-04	0	0	Completed
+id	epic_id	story_type	estimate	name	started	started_at	deadline	completed	completed_at	blocker	blocked	current_state
+171244	135516	chore	2	Update the query for Sports Pre Match Menu to be faster	1	2022-04-01	2022-05-16	1	2022-05-17	0	0	Completed
+172633	175262	bug	2	Sportsbook Bets not Settled - Part1: Prepare Script to find the unsettled tickets and events	1	2022-05-09	2022-05-16	1	2022-05-17	0	0	Completed
+179952	175264	feature	1	Sportsbook Front End release Week 22.12 (Re-do build)	1	2022-05-12	2022-05-15	1	2022-05-16	0	0	Completed
+85470	175260	feature	2	UX - In drop down menu always display most balance total by default	1	2022-03-17		1	2022-05-13	0	0	Completed
+175270	175264	feature	1	Sportsbook Front End release Week 22.12	1	2022-05-10	2022-05-11	1	2022-05-12	0	0	Completed
+139889	135516	chore	5	Investigate why the recovery process on stage3 keeps getting triggered in continuation	1	2022-05-04		1	2022-05-09	0	0	Completed
+177902	135516	chore	2	Investigate Timeline Recovery Process and Suspended markets logic	1	2022-05-04		1	2022-05-09	0	0	Completed
+170983	175260	feature	2	Investigate: Process for updating text on Sportsbook Site when text is updated in Betradar Translations	1	2022-04-20		1	2022-05-05	0	0	Completed
+108898	175260	feature	2	Winner betting market should be the 1st betting market to be displayed	1	2022-03-30		1	2022-05-04	0	0	Completed
+82479	175263	feature	2	Country flags and Icons replace Country names in Live Menu	1	2022-03-25		1	2022-05-04	0	0	Completed
+98630	135516	chore	3	Upgrade the Vue version up to 2.6.x	1	2022-03-02		1	2022-05-04	0	0	Completed
+103279	175260	bug	2	Duplicate popups should not be shown when player logs in the 2nd browser	1	2022-03-04		1	2022-05-04	0	0	Completed
+80082	175260	feature	3	Outcome order  - Correct Score	1	2022-02-23		1	2022-05-04	0	0	Completed
+168154	175264	feature	1	Sportsbook Front End release Week 22.11	1	2022-04-20	2022-05-03	1	2022-05-04	0	0	Completed
