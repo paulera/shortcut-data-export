@@ -120,4 +120,69 @@ class MatrixBuilder
 
     }
 
+    public static function buildStoriesDependencyMap($stories) : array
+    {
+        $resultData = array();
+
+        $storyDataMap = array(
+            'id',
+            'epic_id',
+            'story_type',
+            'estimate',
+            'name',
+            'started',
+            'started_at',
+            'deadline',
+            'completed',
+            'completed_at',
+            'blocker',
+            'blocked'
+        );
+
+        $resultData[0] = array_merge(
+            $storyDataMap,
+            ['current_state'],
+            ['verb','subject_id','subject_state', 'this_iteration']
+        );
+
+        $stories_ids = array_map(fn($story) => $story['id'], $stories);
+
+        foreach ($stories as $story) {
+
+            $mainRowData = array();
+            foreach ($storyDataMap as $key) {
+                $value = $story[$key];
+                if (gettype($value) == 'boolean') {
+                    $value = $value ? 1 : 0;
+                } elseif (substr($key, -3) == '_at' || $key == 'deadline') {
+                    $value = substr($value, 0, 10);
+                }
+                $mainRowData[] = $value;
+            }
+            $mainRowData[] = Config::workflowStateMap[$story['workflow_state_id']] ?? $story['workflow_state_id'];
+
+            if (count($story['story_links'])) {
+                foreach ($story['story_links'] as $link) {
+
+                    $verb = $link['verb'];
+                    if ($verb == "blocks" && $story['blocked']) {
+                        $verb = "blocked by";
+                    }
+
+                    $resultData[] = array_merge($mainRowData, [
+                        $verb,
+                        $link['subject_id'],
+                        Config::workflowStateMap[$link['subject_workflow_state_id']] ?? $link['subject_workflow_state_id'],
+                        in_array($link['subject_id'], $stories_ids)?1:0
+                    ]);
+                }
+            } else {
+                $resultData[] = array_merge($mainRowData, ['','','','']);
+            }
+
+        }
+
+        return $resultData;
+    }
+
 }

@@ -42,6 +42,21 @@ function getdetailedhistory() {
         );
 }
 
+function getdependencies() {
+    setStatus ("Loading data...");
+    display("");
+    api.getText({
+        action: 'dependencies',
+        iterationid: document.getElementById("iterationid").value
+    })
+        .then(
+            function(contents) {
+                display(contents);
+                setStatus ("Success!");
+            }
+        );
+}
+
 function display(contents) {
     document.getElementById("export-contents").innerHTML = contents;
 }

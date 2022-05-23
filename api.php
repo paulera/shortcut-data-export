@@ -30,5 +30,13 @@ switch ($_GET['action']){
         print ($tsvTable);
         break;
 
+    case 'dependencies':
+        $iterationId = $_GET['iterationid'];
+        $stories = ShortcutAdapter::getStoriesByIteration($iterationId);
+        $matrix = MatrixBuilder::buildStoriesDependencyMap($stories);
+        $tsvTable = Presenter::generateTsvTable($matrix);
+        print ($tsvTable);
+        break;
+
 }
 
